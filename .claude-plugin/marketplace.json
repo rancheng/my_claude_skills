@@ -1,0 +1,22 @@
+{
+  "name": "my-claude-skills",
+  "owner": {
+    "name": "Ran Cheng",
+    "email": "chengran327@gmail.com"
+  },
+  "metadata": {
+    "description": "Personal collection of Claude Code skills.",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "codex-imagegen",
+      "description": "Generate or edit images by invoking OpenAI's gpt-image-2 (\"image 2\") through headless `codex exec`. Triggers on requests to create logos, icons, illustrations, banners, sprite sheets, or to transform a reference image.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/codex-imagegen"
+      ]
+    }
+  ]
+}
