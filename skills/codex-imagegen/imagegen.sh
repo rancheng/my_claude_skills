@@ -44,12 +44,16 @@ mkdir -p "$out_dir"
 # --sandbox read-only   : we copy the artifact ourselves; codex needs no write
 # --ephemeral           : don't pollute session history with one-shot calls
 # $imagegen prefix      : forces the built-in image_gen skill (gpt-image-2)
+# stdin < /dev/null     : codex exec otherwise reads stdin until EOF and hangs
+#                         forever when invoked from a non-TTY parent (Claude
+#                         Code's Bash tool, CI, etc.). /dev/null gives immediate
+#                         EOF so codex proceeds with the argument prompt only.
 log=$(codex exec \
   --skip-git-repo-check \
   --sandbox read-only \
   --ephemeral \
   "${img_args[@]}" \
-  "\$imagegen $prompt" 2>&1) || {
+  "\$imagegen $prompt" < /dev/null 2>&1) || {
     echo "$log" >&2
     echo "ERROR: codex exec failed" >&2
     exit 2
