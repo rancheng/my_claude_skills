@@ -7,6 +7,7 @@ A personal marketplace of [Claude Code](https://claude.com/claude-code) skills.
 | Skill | What it does |
 |-------|--------------|
 | [`codex-imagegen`](skills/codex-imagegen/) | Generate or edit images via OpenAI's `gpt-image-2` ("image 2") by invoking [`codex exec`](https://developers.openai.com/codex/cli) in headless mode. |
+| [`dashscope-videogen`](skills/dashscope-videogen/) | Generate short text-to-video clips via Aliyun DashScope's async video synthesis API (`happyhorse-1.0-t2v` / Wan series). |
 
 More to come.
 
@@ -17,6 +18,7 @@ In Claude Code:
 ```
 /plugin marketplace add rancheng/my_claude_skills
 /plugin install codex-imagegen@my-claude-skills
+/plugin install dashscope-videogen@my-claude-skills
 ```
 
 To pull updates later:
@@ -38,6 +40,7 @@ chmod +x ~/.claude/skills/codex-imagegen/*.sh
 ## Per-skill prerequisites
 
 - **`codex-imagegen`** — requires the [Codex CLI](https://developers.openai.com/codex/cli) on `PATH` and either `codex login` completed or `OPENAI_API_KEY` exported. Image generation consumes Codex usage credits (3–5× a normal turn).
+- **`dashscope-videogen`** — requires a [DashScope API key](https://dashscope.console.aliyun.com/apiKey). On first use Claude will ask you for the key once and persist it to `~/.claude/skill-env/dashscope-videogen.env` (chmod 600, outside any git repo). You can also `export DASHSCOPE_API_KEY=sk-…` in your shell. Video generation consumes Aliyun model credits.
 
 ## Repo layout
 

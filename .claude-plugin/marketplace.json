@@ -6,7 +6,7 @@
   },
   "metadata": {
     "description": "Personal collection of Claude Code skills.",
-    "version": "0.1.0"
+    "version": "0.2.0"
   },
   "plugins": [
     {
@@ -16,6 +16,15 @@
       "strict": false,
       "skills": [
         "./skills/codex-imagegen"
+      ]
+    },
+    {
+      "name": "dashscope-videogen",
+      "description": "Generate short text-to-video clips via Aliyun DashScope's async video synthesis API (happyhorse / Wan series). Triggers on requests to create, generate, or make a video / animation / 视频 from a text description, when the user has not specified a different generator.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/dashscope-videogen"
       ]
     }
   ]
