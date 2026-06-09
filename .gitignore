@@ -11,6 +11,8 @@
 demo_*.png
 *.mp4
 
+node_modules/
+
 # Defensive: never commit env / secret files even if dropped here by mistake.
 # The canonical location for skill secrets is ~/.claude/skill-env/, NOT the repo.
 .env
