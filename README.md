@@ -8,6 +8,8 @@ A personal marketplace of [Claude Code](https://claude.com/claude-code) skills.
 |-------|--------------|
 | [`codex-imagegen`](skills/codex-imagegen/) | Generate or edit images via OpenAI's `gpt-image-2` ("image 2") by invoking [`codex exec`](https://developers.openai.com/codex/cli) in headless mode. |
 | [`dashscope-videogen`](skills/dashscope-videogen/) | Generate short text-to-video clips via Aliyun DashScope's async video synthesis API (`happyhorse-1.0-t2v` / Wan series). |
+| [`deck-to-pdf`](skills/deck-to-pdf/) | Screenshot-per-slide HTML-to-PDF converter using headless Chromium + Playwright. Faithful to browser visuals — handles video frames, scroll-snap decks, canvas/JS-driven pages that break `@media print`. |
+| [`svg-animations`](skills/svg-animations/) | Create handcrafted SVG animations — stroke drawing, shape morphing, SMIL, CSS-driven animation, motion paths, gradients, and filters. Based on [supermemoryai/skills/svg-animations](https://github.com/supermemoryai/skills/blob/main/svg-animations/SKILL.md). |
 
 More to come.
 
@@ -19,6 +21,8 @@ In Claude Code:
 /plugin marketplace add rancheng/my_claude_skills
 /plugin install codex-imagegen@my-claude-skills
 /plugin install dashscope-videogen@my-claude-skills
+/plugin install deck-to-pdf@my-claude-skills
+/plugin install svg-animations@my-claude-skills
 ```
 
 To pull updates later:
@@ -61,6 +65,10 @@ chmod +x ~/.claude/skills/codex-imagegen/*.sh
 ## Adding a new skill
 
 See [DEVELOPMENT.md](DEVELOPMENT.md).
+
+## Credits
+
+- [`svg-animations`](https://github.com/supermemoryai/skills/blob/main/svg-animations/SKILL.md) — adapted from [supermemoryai/skills](https://github.com/supermemoryai/skills) by the Supermemory team.
 
 ## License
 
